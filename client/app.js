@@ -29,7 +29,7 @@ const handleFormSubmit = async () => {
       password: password.value.trim(),
     };
 
-    const response = await fetch("http://localhost:4211/createUser", {
+    const response = await fetch("https://user-manager-with-node-js.vercel.app/createUser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

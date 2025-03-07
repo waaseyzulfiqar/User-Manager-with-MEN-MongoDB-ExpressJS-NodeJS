@@ -5,7 +5,7 @@ const loader = document.getElementById("loader");
 const getAllUsers = async () => {
   loader.classList.remove("d-none");
   try {
-    const response = await fetch("http://localhost:4211/getAllUser");
+    const response = await fetch("https://user-manager-with-node-js.vercel.app/getAllUser");
     const data = await response.json();
     // console.log(data);
 
@@ -85,7 +85,7 @@ const handleUpdateUser = async () => {
 
     console.log(userObj);
 
-    const response = await fetch(`http://localhost:4211/update/${userId}`, {
+    const response = await fetch(`https://user-manager-with-node-js.vercel.app/update/${userId}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -123,7 +123,7 @@ const handleDeleteUser = async (id) => {
     }).then(async (result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        await fetch(`http://localhost:4211/delete/${id}`, {
+        await fetch(`https://user-manager-with-node-js.vercel.app/delete/${id}`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
