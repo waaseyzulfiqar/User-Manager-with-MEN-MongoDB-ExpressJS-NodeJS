@@ -29,7 +29,7 @@ const handleFormSubmit = async () => {
       password: password.value.trim(),
     };
 
-    const response = await fetch("https://server-liard-one-38.vercel.app//createUser", {
+    const response = await fetch("https://server-liard-one-38.vercel.app/createUser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
