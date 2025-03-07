@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="login-box">
+      <h3 class="info-text">User Registration</h3>
+
+      <div class="form-container">
+
+        <div class="input-addon">
+          <input class="form-element input-field" id="name" placeholder="Name" type="text">
+        </div>
+
+        <div class="input-addon">
+          <input class="form-element input-field" id="email" placeholder="Email" type="email">
+        </div>
+
+        <div class="input-addon">
+          <input class="form-element input-field" id="age" placeholder="Age" type="number">
+        </div>
+
+        <div class="input-addon">
+          <input class="form-element input-field" id="phoneNo" placeholder="Phone No." type="number">
+        </div>
+
+        <div class="input-addon">
+          <input class="form-element input-field" id="password" placeholder="Password" type="password">
+        </div>
+
+        <button class="form-element is-submit" onclick="handleFormSubmit()">Create User</button>
+      </div>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="module" src="./app.js"></script>
+</body>
+
+</html>
