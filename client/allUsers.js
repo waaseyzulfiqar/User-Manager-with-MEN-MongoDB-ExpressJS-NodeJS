@@ -34,7 +34,7 @@ const getAllUsers = async () => {
     }
   } catch (error) {
     console.log(error.message);
-    Swal.fire({
+    await Swal.fire({
       icon: "error",
       title: "Oops...",
       text: `${error.message}`,
@@ -68,7 +68,7 @@ const handleUpdateUser = async () => {
       !phoneNo.value ||
       !password.value
     ) {
-      Swal.fire({
+      await Swal.fire({
         icon: "error",
         title: "Oops...",
         text: "You Must fill all the Empty Fields!",
@@ -93,8 +93,6 @@ const handleUpdateUser = async () => {
       body: JSON.stringify(userObj),
     });
     
-    location.reload();
-
     await Swal.fire({
       position: "center",
       icon: "success",
@@ -102,9 +100,12 @@ const handleUpdateUser = async () => {
       showConfirmButton: false,
       timer: 1500
     });
+
+    location.reload();
+
   } catch (error) {
     console.log(error.message);
-    Swal.fire({
+    await Swal.fire({
       icon: "error",
       title: "Oops...",
       text: `${error.message}`,
@@ -134,7 +135,7 @@ const handleDeleteUser = async (id) => {
       }
     });
   } catch (error) {
-    Swal.fire({
+    await Swal.fire({
       icon: "error",
       title: "Oops...",
       text: `${error.message}`,
