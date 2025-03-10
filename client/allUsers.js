@@ -7,6 +7,7 @@ const getAllUsers = async () => {
   try {
     const response = await fetch("https://user-manager-server-gamma.vercel.app/getAllUser");
     const data = await response.json();
+    console.log(data);
 
     div.innerHTML = ""; // Clear previous content before updating
 
@@ -91,6 +92,8 @@ const handleUpdateUser = async () => {
       },
       body: JSON.stringify(userObj),
     });
+
+    getAllUsers()
     
     await Swal.fire({
       position: "center",
@@ -130,6 +133,7 @@ const handleDeleteUser = async (id) => {
             "Content-Type": "application/json",
           },
         });
+        getAllUsers()
         // location.reload();
       } else if (result.isDenied) {
       }
