@@ -7,7 +7,6 @@ const getAllUsers = async () => {
   try {
     const response = await fetch("https://user-manager-server-gamma.vercel.app/getAllUser");
     const data = await response.json();
-    // console.log(data);
 
     div.innerHTML = ""; // Clear previous content before updating
 
@@ -48,7 +47,6 @@ getAllUsers();
 
 const updateUser = (id) => {
   userId = id;
-  return id; // Pass the id to handleUpdateUser
 };
 
 const userName = document.getElementById("name");
