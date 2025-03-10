@@ -17,7 +17,6 @@ const handleFormSubmit = async () => {
         icon: "error",
         title: "Oops...",
         text: "You Must fill all the Empty Fields!",
-        // footer: '<a href="#">Why do I have this issue?</a>'
       });
       return;
     }
@@ -29,7 +28,7 @@ const handleFormSubmit = async () => {
       password: password.value.trim(),
     };
 
-    const response = await fetch("https://server-liard-one-38.vercel.app/createUser", {
+    const response = await fetch("https://user-manager-server-gamma.vercel.app/createUser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

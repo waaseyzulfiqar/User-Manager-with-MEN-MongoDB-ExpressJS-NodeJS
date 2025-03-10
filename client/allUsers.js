@@ -5,7 +5,7 @@ const loader = document.getElementById("loader");
 const getAllUsers = async () => {
   loader.classList.remove("d-none");
   try {
-    const response = await fetch("https://server-liard-one-38.vercel.app/getAllUser");
+    const response = await fetch("https://user-manager-server-gamma.vercel.app/getAllUser");
     const data = await response.json();
     // console.log(data);
 
@@ -85,7 +85,7 @@ const handleUpdateUser = async () => {
 
     console.log(userObj);
 
-    const response = await fetch(`https://server-liard-one-38.vercel.app/update/${userId}`, {
+    const response = await fetch(`https://user-manager-server-gamma.vercel.app/${userId}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -124,7 +124,7 @@ const handleDeleteUser = async (id) => {
     }).then(async (result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        await fetch(`https://server-liard-one-38.vercel.app/delete/${id}`, {
+        await fetch(`https://user-manager-server-gamma.vercel.app/${id}`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
