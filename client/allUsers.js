@@ -46,6 +46,7 @@ const getAllUsers = async () => {
 getAllUsers();
 
 const updateUser = (id) => {
+  console.log(id);
   userId = id;
 };
 
@@ -112,6 +113,7 @@ const handleUpdateUser = async () => {
 };
 
 const handleDeleteUser = async (id) => {
+  console.log(id);
   try {
     Swal.fire({
       title: "Are You Sure?",
