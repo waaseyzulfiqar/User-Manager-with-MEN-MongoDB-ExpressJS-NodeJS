@@ -85,7 +85,7 @@ const handleUpdateUser = async () => {
 
     console.log(userObj);
 
-    const response = await fetch(`https://user-manager-server-gamma.vercel.app/${userId}`, {
+    const response = await fetch(`https://user-manager-server-gamma.vercel.app/update/${userId}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -93,7 +93,7 @@ const handleUpdateUser = async () => {
       body: JSON.stringify(userObj),
     });
 
-    getAllUsers()
+    // getAllUsers()
     
     await Swal.fire({
       position: "center",
@@ -127,13 +127,13 @@ const handleDeleteUser = async (id) => {
     }).then(async (result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        await fetch(`https://user-manager-server-gamma.vercel.app/${id}`, {
+        await fetch(`https://user-manager-server-gamma.vercel.app/delete/${id}`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
         });
-        getAllUsers()
+        // getAllUsers()
         // location.reload();
       } else if (result.isDenied) {
       }
