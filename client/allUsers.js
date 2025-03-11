@@ -103,7 +103,7 @@ const handleUpdateUser = async () => {
       timer: 1500
     });
 
-    // location.reload();
+    location.reload();
 
   } catch (error) {
     console.log(error.message);
@@ -134,7 +134,7 @@ const handleDeleteUser = async (id) => {
           },
         });
         // getAllUsers()
-        // location.reload();
+        location.reload();
       } else if (result.isDenied) {
       }
     });
