@@ -6,14 +6,22 @@ import cors from "cors";
 const app = express();
 const PORT = 4211;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://user-manager-with-node-js.vercel.app",
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: "*",
+    credentials: true,
+  })
+);
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
-  res.send('API is working😊')
-})
+app.get("/", (req, res) => {
+  res.send("API is working😊");
+});
 
 // create new user
 
@@ -21,7 +29,7 @@ app.post("/createUser", async (req, res) => {
   try {
     if (req.body) {
       const createdUser = await userModel.create(req.body);
-      res.send(createdUser)
+      res.send(createdUser);
     }
   } catch (error) {
     res.json({
@@ -35,7 +43,7 @@ app.post("/createUser", async (req, res) => {
 app.get("/getAllUser", async (req, res) => {
   try {
     const data = await userModel.find();
-    res.send(data)
+    res.send(data);
   } catch (error) {
     res.json({
       message: `${error.message} || "Oops😕 Something went wrong!"`,
@@ -48,8 +56,10 @@ app.get("/getAllUser", async (req, res) => {
 app.post("/update/:id", async (req, res) => {
   try {
     const id = req.params.id;
-    const updatedUser = await userModel.findByIdAndUpdate(id, req.body, {new: true});
-    res.send(updatedUser)
+    const updatedUser = await userModel.findByIdAndUpdate(id, req.body, {
+      new: true,
+    });
+    res.send(updatedUser);
   } catch (error) {
     res.json({
       message: `${error.message} || "Oops😕 Something went wrong!"`,
@@ -62,8 +72,8 @@ app.post("/update/:id", async (req, res) => {
 app.post("/delete/:id", async (req, res) => {
   try {
     const id = req.params.id;
-    const deletedUser = await userModel.findByIdAndDelete(id, {new: true});
-    res.send(deletedUser)
+    const deletedUser = await userModel.findByIdAndDelete(id, { new: true });
+    res.send(deletedUser);
   } catch (error) {
     res.json({
       message: `${error.message} || "Oops😕 Something went wrong!"`,
